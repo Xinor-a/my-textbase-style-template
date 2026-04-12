@@ -1,6 +1,9 @@
 main {
     margin-left: 30px;
     margin-right: calc(350px + 30px + 50px);
+}
+
+body:not(.no-transition) main {
     transition: margin-right 0.5s ease-in-out;
 }
 
@@ -23,7 +26,9 @@ aside#side-index {
 
     display: flex;
     flex-direction: column;
+}
 
+body:not(.no-transition) aside#side-index {
     transition: transform 0.5s ease-in-out;
 }
 
@@ -61,7 +66,9 @@ aside#side-index.closed {
     color: #ecf0f1;
     border: none;
     cursor: pointer;
+}
 
+body:not(.no-transition) #toggle-side-index-button {
     transition:
         transform 0.5s ease-in-out,
         background-color 0.3s ease;
@@ -78,6 +85,9 @@ aside#side-index.closed {
 #toggle-side-index-button-icon {
     display: inline-block;
     font-size: 20px;
+}
+
+body:not(.no-transition) #toggle-side-index-button-icon {
     transition:
         transform 0.5s ease-in-out,
         color 0.3s ease;

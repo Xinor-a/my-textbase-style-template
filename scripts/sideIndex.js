@@ -1,5 +1,13 @@
 // generate a right side index for the page based on the headings (h1, h2, h3, etc.)
 
+// to prevent transition from being applied on page load, add a class to the body and remove it after the first frame
+document.body.classList.add("no-transition");
+requestAnimationFrame(() => {
+    setTimeout(() => {
+        document.body.classList.remove("no-transition");
+    }, 1000);
+});
+
 // get all the headings on the page
 const maxHeadingLevel = 6;
 
