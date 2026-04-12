@@ -13,19 +13,27 @@ const strArrSakuraStyles = [
 const doc = document.querySelector("head");
 const sakuraStyleLink = document.createElement("link");
 
+const getThemeName = (href) => href.split("/").pop().replace(".css", "");
+
+const applyTheme = (href) => {
+    sakuraStyleLink.href = href;
+    const name = getThemeName(href);
+    document.body.setAttribute("data-sakura-theme", name);
+    toggleStyleButton.textContent = `Toggle Style (${name})`;
+};
+
 // set initial style to sakura-dark
 sakuraStyleLink.rel = "stylesheet";
-sakuraStyleLink.href = strArrSakuraStyles[0];
 doc.appendChild(sakuraStyleLink);
 
 // add toggle style button to the page
 const toggleStyleButton = document.createElement("button");
 toggleStyleButton.id = "toggle-style-button";
-toggleStyleButton.textContent = "Toggle Style (sakura-dark)";
 toggleStyleButton.addEventListener("click", () => {
     const currentIndex = strArrSakuraStyles.indexOf(sakuraStyleLink.href);
     const nextIndex = (currentIndex + 1) % strArrSakuraStyles.length;
-    sakuraStyleLink.href = strArrSakuraStyles[nextIndex];
-    toggleStyleButton.textContent = `Toggle Style (${strArrSakuraStyles[nextIndex].split("/").pop().replace(".css", "")})`;
+    applyTheme(strArrSakuraStyles[nextIndex]);
 });
+
+applyTheme(strArrSakuraStyles[0]);
 document.querySelector("aside#side-index").appendChild(toggleStyleButton);
