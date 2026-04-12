@@ -39,10 +39,14 @@ sideIndexList.id = "side-index-list";
 sideIndexWrapper.appendChild(sideIndexList);
 
 // add each heading to the side index
+const minHeadingLevel = Math.min(...Array.from(headings).map((h) => parseInt(h.tagName[1])));
+
 headings.forEach((heading) => {
+    const level = parseInt(heading.tagName[1]);
     const listItem = document.createElement("li");
     listItem.style.marginBottom = "5px";
     listItem.style.cursor = "pointer";
+    listItem.style.paddingLeft = `${(level - 1) * 1}em`;
     listItem.textContent = heading.textContent;
     listItem.addEventListener("click", () => {
         heading.scrollIntoView({ behavior: "smooth" });
