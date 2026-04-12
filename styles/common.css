@@ -5,11 +5,12 @@ body {
     padding: 0;
 }
 
+/* インラインコードのスタイル */
 code {
-    font-family: monospace;
-    font-size: 0.9em;
-}
-
-.hljs {
-    color: inherit;
+    background-color: #282c34; /* ダークグレー */
+    color: #55ff55 !important; /* 明るい白 */
+    font-family: "Courier New", Courier, monospace; /* 等幅フォント */
+    padding: 2px 4px; /* 内側の余白 */
+    border-radius: 4px; /* 角を丸くする */
+    box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.2); /* 内側の影 */
 }
