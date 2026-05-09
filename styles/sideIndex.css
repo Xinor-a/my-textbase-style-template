@@ -11,6 +11,10 @@ main.aside-closed {
     margin-right: calc(30px + 30px);
 }
 
+aside {
+    font-size: 1rem;
+}
+
 aside#side-index {
     position: fixed;
     top: 0;
@@ -18,14 +22,19 @@ aside#side-index {
     width: 350px;
     height: 100%;
     overflow: hidden;
-    background-color: #f0f0f0;
+    background-color: #f5f0e8;
     border-left: 1px solid #ccc;
     padding: 10px;
-    padding-bottom: 40px;
+    padding-bottom: 0;
     box-sizing: border-box;
 
     display: flex;
     flex-direction: column;
+}
+
+aside#side-index li {
+    text-wrap: wrap !important;
+    border-bottom: solid #aaa 1px;
 }
 
 body:not(.no-transition) aside#side-index {

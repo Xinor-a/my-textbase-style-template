@@ -1,14 +1,15 @@
 const _scriptBase = new URL(".", document.currentScript.src).href;
 
+const googleFonts = document.createElement("link");
+googleFonts.rel = "stylesheet";
+googleFonts.href =
+    "https://fonts.googleapis.com/css2?family=Klee+One:wght@400;600&family=M+PLUS+1+Code:wght@100..700&family=Zen+Kaku+Gothic+New:wght@400;700&display=swap";
+document.head.appendChild(googleFonts);
+
 const sideIndexStyle = document.createElement("link");
 sideIndexStyle.rel = "stylesheet";
 sideIndexStyle.href = _scriptBase + "../styles/sideIndex.css";
 document.querySelector("head").appendChild(sideIndexStyle);
-
-const defaultStyle = document.createElement("link");
-defaultStyle.rel = "stylesheet";
-defaultStyle.href = _scriptBase + "../styles/toggleStyles.css";
-document.querySelector("head").appendChild(defaultStyle);
 
 // Load Highlight.js CSS dynamically
 const highlightCss = document.createElement("link");
