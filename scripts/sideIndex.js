@@ -54,7 +54,7 @@ headings.forEach((heading) => {
     const listItem = document.createElement("li");
     listItem.style.marginBottom = "5px";
     listItem.style.cursor = "pointer";
-    listItem.style.paddingLeft = `${(level - 1) * 1}em`;
+    listItem.style.marginLeft = `${(level - 1) * 1}em`;
     listItem.textContent = heading.textContent;
     listItem.addEventListener("click", () => {
         heading.scrollIntoView({ behavior: "smooth" });
@@ -71,11 +71,26 @@ toggleSideIndexButtonIcon.textContent = ">";
 toggleSideIndexButton.appendChild(toggleSideIndexButtonIcon);
 document.body.appendChild(toggleSideIndexButton);
 
-let bFlgSideIndexShow = true;
+const funcGetSideIndexFlag = function() {
+    const stored = localStorage.getItem("sideIdxOpen");
+    if(stored === null){
+        localStorage.setItem("sideIdxOpen", "true");
+        stored = "true";
+    }
 
-toggleSideIndexButton.addEventListener("click", () => {
-    bFlgSideIndexShow = !bFlgSideIndexShow;
-    if (bFlgSideIndexShow) {
+    return stored == "true";
+}
+
+const funcToggleSideIndexStatus = function() {
+    let bFlgSideIndexOpen = funcGetSideIndexFlag();
+    bFlgSideIndexOpen = !bFlgSideIndexOpen;
+    localStorage.setItem("sideIdxOpen", bFlgSideIndexOpen);
+
+    return bFlgSideIndexOpen;
+}
+
+const funcSetSideIndex = function(bFlgSideIndexOpen) {
+    if (bFlgSideIndexOpen) {
         sideIndex.classList.remove("closed");
         toggleSideIndexButton.classList.remove("closed");
         main.classList.remove("aside-closed");
@@ -84,4 +99,14 @@ toggleSideIndexButton.addEventListener("click", () => {
         toggleSideIndexButton.classList.add("closed");
         main.classList.add("aside-closed");
     }
+}
+
+const funcToggleSideIndex = function() {
+    funcSetSideIndex(funcToggleSideIndexStatus());
+}
+
+toggleSideIndexButton.addEventListener("click", () => {
+    funcToggleSideIndex();
 });
+
+funcSetSideIndex(funcGetSideIndexFlag());

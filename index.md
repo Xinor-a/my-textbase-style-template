@@ -84,6 +84,26 @@ def greet(name):
     return f"Hello, {name}!"
 ```
 
+You can also specify language by this way:
+
+````plaintext
+```
+@lang:csharp
+function greet(name) {
+    return `Hello, ${name}!`;
+}
+```
+````
+
+Then the code block will be highlighted as JavaScript regardless of the file extension like this:
+
+```text
+@lang:csharp
+function greet(name) {
+    return `Hello, ${name}!`;
+}
+```
+
 ### Tables
 
 | Column A | Column B | Column C |
