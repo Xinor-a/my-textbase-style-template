@@ -477,10 +477,11 @@ function greet(name) {
 <h2 id="how-to-use-this-template">How to Use This Template</h2>
 <ol>
 <li>Copy this repository.</li>
-<li>Edit <code>index.md</code> with your own content — keep the four <code>&lt;script&gt;</code> tags at the top.</li>
-<li>Open <code>index.md</code> in VSCode and press <code>Ctrl+Shift+V</code> to preview.</li>
-<li>Use the side index to navigate and the toggle button to switch themes.</li>
+<li>Duplicate the <code>docs/template/</code> folder inside <code>docs/</code> and rename it.</li>
+<li>Edit the Markdown files in the duplicated folder to write your content.</li>
+<li>Do not remove the <code>&lt;script&gt;</code> tag at the bottom of each file.</li>
 </ol>
+<p>The root <code>index.html</code> serves as a table of contents linking to each page under <code>docs/</code>.</p>
 <blockquote>
 <p><strong>Note:</strong> If you place a page in a deeper subdirectory (e.g. <code>docs/chapter/page/</code>), adjust the relative path in the <code>&lt;script&gt;</code> tag accordingly (e.g. <code>../../../scripts/index.js</code>).</p>
 </blockquote>

@@ -1,101 +1,36 @@
-# My Textbase Style Template
+# 📚 My Textbase Style Template
 
-A Markdown document template for **VSCode Markdown Preview** with a side index panel, syntax highlighting, and KaTeX math rendering.
+A template project for creating and auto-generating text-based HTML pages — like textbooks, study notes, or books — using Markdown.
 
-## Requirements
+## ✨ Features
 
-- [Visual Studio Code](https://code.visualstudio.com/)
-- Internet access (CDN assets: highlight.js, KaTeX, Google Fonts)
+- 📝 **Markdown-based authoring** — Auto-generate HTML via the Markdown PDF extension for Visual Studio Code
+- 🎨 **Calm, focused styling** — A reading/study-oriented design that does not distract from concentration or motivation
+- 🚀 **Coming soon** — GitHub Pages / GitLab Pages support
 
-## Getting Started
+## 🔌 Recommended VS Code Extensions
 
-1. Copy `docs/template/index.md` to your project directory along with the `scripts/` and `styles/` folders.
-2. Edit `index.md` — keep the four `<script>` tags at the bottom.
-3. Preview using one of the following methods:
+- [Markdown PDF](https://marketplace.visualstudio.com/items?itemName=yzane.markdown-pdf) — Auto-generate HTML from Markdown
+- [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) — Real-time browser preview
 
-**VSCode Markdown Preview**
+## 🚀 Usage
 
-Open `index.md` in VSCode and press `Ctrl+Shift+V` (`Cmd+Shift+V` on Mac).
+### 📁 Directory Structure
 
-**Live Server (VSCode extension)**
-
-Install the [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) extension, open `index.html`, and click **Go Live** in the status bar.
-
-This method serves files over HTTP, which is required for the scripts to resolve relative paths correctly.
-
-## Features
-
-### Side Index
-
-All headings (`#` through `######`) appear in a fixed right-side panel. Click any entry to scroll to that section.
-
-Use the `>` button on the right edge to collapse or expand the panel. The open/closed state is persisted in `localStorage`.
-
-### Syntax Highlighting
-
-Code blocks are highlighted via [highlight.js](https://highlightjs.org/) (GitHub Dark theme).
-
-You can override the detected language by placing `@lang:<language>` on the first line of a code block:
-
-````plaintext
-```
-@lang:csharp
-var x = 1;
-```
-````
-
-### Math Rendering
-
-Inline math: `$E = mc^2$`
-
-Display math:
-
-```plaintext
-$$
-\int_0^\infty e^{-x^2} dx = \frac{\sqrt{\pi}}{2}
-$$
+```text
+project-root/
+├── index.html    # Top page: table of contents and guide linking to docs/
+└── docs/
+    ├── template/ # Template folder (duplicate this to create new content)
+    └── ...       # Your content pages
 ```
 
-Rendered via [KaTeX](https://katex.org/).
+### 📄 Creating Content
 
-### Custom Fonts
+1. Duplicate the `docs/template/` folder inside `docs/`
+2. Edit the Markdown files in the duplicated folder to write your content
+3. ⚠️ **Do not remove script references**
 
-| Usage       | Font                |
-| ----------- | ------------------- |
-| Body text   | Klee One            |
-| Code blocks | M PLUS 1 Code       |
-| Headings    | Zen Kaku Gothic New |
+### 🏠 Top Page
 
-Loaded from Google Fonts.
-
-## File Structure
-
-```plaintext
-.
-├── docs/
-│   └── template/
-│       ├── index.md    # blank template to copy
-│       └── index.html  # pre-rendered HTML of the template
-├── scripts/
-│   ├── sideIndex.js    # side index panel
-│   ├── defaultStyles.js # styles and highlight.js loader
-│   └── katex.js        # KaTeX loader
-├── styles/
-│   ├── common.css      # main content styles
-│   └── sideIndex.css   # side panel styles
-└── index.md            # demo document
-```
-
-## Required Script Tags
-
-Every document must include these four tags at the bottom (adjust relative paths as needed):
-
-```html
-<script src="./scripts/sideIndex.js"></script>
-<script src="./scripts/defaultStyles.js"></script>
-<script src="./scripts/katex.js"></script>
-```
-
-## Adding More Pages
-
-Duplicate `docs/template/index.md` into a new directory along with the `scripts/` and `styles/` folders, then adjust the `src` paths in the `<script>` tags accordingly.
+The root `index.html` is intended to serve as a table of contents and README-style guide page, linking to each page created under `docs/`.

@@ -126,9 +126,11 @@ Sample image from Picsum:
 ## How to Use This Template
 
 1. Copy this repository.
-2. Edit `index.md` with your own content — keep the four `<script>` tags at the top.
-3. Open `index.md` in VSCode and press `Ctrl+Shift+V` to preview.
-4. Use the side index to navigate and the toggle button to switch themes.
+2. Duplicate the `docs/template/` folder inside `docs/` and rename it.
+3. Edit the Markdown files in the duplicated folder to write your content.
+4. Do not remove the `<script>` tag at the bottom of each file.
+
+The root `index.html` serves as a table of contents linking to each page under `docs/`.
 
 > **Note:** If you place a page in a deeper subdirectory (e.g. `docs/chapter/page/`), adjust the relative path in the `<script>` tag accordingly (e.g. `../../../scripts/index.js`).
 
