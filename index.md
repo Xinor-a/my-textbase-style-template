@@ -130,11 +130,8 @@ Sample image from Picsum:
 3. Open `index.md` in VSCode and press `Ctrl+Shift+V` to preview.
 4. Use the side index to navigate and the toggle button to switch themes.
 
-To add more pages, duplicate `index.md` and the `scripts/` + `styles/` folders (or adjust the relative paths in the `<script>` tags).
+> **Note:** If you place a page in a deeper subdirectory (e.g. `docs/chapter/page/`), adjust the relative path in the `<script>` tag accordingly (e.g. `../../../scripts/index.js`).
 
 <!-- End of document -->
-<!-- Do not remove or modify the following script tags -->
-<script src="./scripts/sideIndex.js"></script>
-<script src="./scripts/toggleStyles.js"></script>
-<script src="./scripts/defaultStyles.js"></script>
-<script src="./scripts/katex.js"></script>
+<!-- Do not remove or modify the following script tag -->
+<script src="./scripts/index.js"></script>
